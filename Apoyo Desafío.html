@@ -102,9 +102,16 @@ for (let i = 0; i < dental.length; i++) {
 //5.- Modificar con funciones las previsiones de dental: cambiar las de fonasa por isapre y viceversa. Además imprimir un ; con el rut asociado a la consulta.
 
 dental.forEach(element => {
-    if(element.prevision == FONASA) {
-
+    if(element.prevision == 'FONASA') {
+        element.prevision = 'ISAPRE';
     }
+    if(element.prevision == 'ISAPRE') {
+        element.prevision = 'FONASA';
+    }
+
+    for (let i = 0; i < dental.length; i++) {
+    document.write('<p>' + dental[i].prevision + '; ' + dental[i].rut + '</p>');
+    };
 });
 
 //FIN DE MI CÓDIGO
